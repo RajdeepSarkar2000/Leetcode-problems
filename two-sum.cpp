@@ -7,7 +7,8 @@ public:
   vector<int> twoSum(vector<int>& nums, int target) {
       map<int, int> map;
       vector<int> pairs;
-      for(int i = 0; i < nums.size(); i++) {
+      int n = nums.size();
+      for(int i = 0; i < n; i++) {
           int temp = target - nums[i];
           if(map.find(temp) != map.end()) {
               pairs.push_back(map.find(temp)->second);
@@ -20,7 +21,8 @@ public:
 };
 //Two pointer methods 
 vector<int> twoSum(vector<int>& nums, int target) {
-    int x = 0, y = nums.size() - 1;
+    int n = nums.size();
+    int x = 0, y = n - 1; // here x and y are two pointers where x is starting from from front and y from end of the input string
     sort(nums.begin(), nums.end());
     while(x < y) {
       int temp = nums[x] + nums[y];
